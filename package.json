@@ -1,0 +1,15 @@
+{
+    "name": "audit-unzip",
+    "version": "0.0.1",
+    "description": "unzip files in a given directory",
+    "author": "derekWinfield (https://github.com/zerocaps)",
+    "license": "none",
+    "engines": {
+        "node": ">=8.9.0"
+    },
+    "dependencies": {
+        "glob": "*",
+        "adm-zip": "*"
+    },
+    "main": "unzip-files.js"
+}
