@@ -7,5 +7,6 @@
     "trailing": true,
     "node": true,
     "devel": true,
+    "jasmine": true,
     "indent": 4
 }

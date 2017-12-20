@@ -2,7 +2,7 @@
  * Unzip all single-file archives in a given directory.
  * Assumes the zip archive only contains a single xls file.
  * @author derekWinfield
- * @example node unzip-audit-files.js
+ * @example node unzip-files.js
  */
 var fs = require('fs');
 var files = require('./process-files.js');
@@ -22,5 +22,7 @@ fs.stat(path, function(err, stats) {
     console.log("unzipping files located in " + path + "...");
     fs.readdir(path, function(err, items) {
         files.process(path, items);
+        console.log("done.");
+        console.log();
     });
 });

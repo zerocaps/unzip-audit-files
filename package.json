@@ -1,7 +1,7 @@
 {
-    "name": "audit-unzip",
+    "name": "unzip-audit-files",
     "version": "0.0.1",
-    "description": "unzip files in a given directory",
+    "description": "Extract xls file from single-file zip archives in a given directory",
     "author": "derekWinfield (https://github.com/zerocaps)",
     "license": "none",
     "engines": {
@@ -11,5 +11,15 @@
         "glob": "*",
         "adm-zip": "*"
     },
-    "main": "unzip-files.js"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zerocaps/unzip-audit-files.git"
+    },
+    "main": "unzip-files.js",
+    "devDependencies": {
+        "jasmine": "^2.8.0"
+    },
+    "scripts": {
+        "test": "jasmine"
+    }
 }
