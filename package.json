@@ -17,9 +17,17 @@
     },
     "main": "unzip-files.js",
     "devDependencies": {
-        "jasmine": "^2.8.0"
+        "coveralls": "^3.0.0",
+        "jasmine": "^2.8.0",
+        "nyc": "^11.4.1"
     },
     "scripts": {
-        "test": "jasmine"
+        "test": "nyc jasmine",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+    },
+    "nyc": {
+        "exclude": [
+            "**/*-spec.js"
+        ]
     }
 }
