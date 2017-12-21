@@ -14,7 +14,14 @@ exports.process = function (directoryPath, files) {
         var item = files[i];
 
         var filePath = path.join(directoryPath, item);
-        var fileStats = statSync(filePath);
+        var fileStats;
+        try {
+            fileStats = statSync(filePath);
+        }
+        catch (err) {
+            //console.log("invalid file path", err);
+            continue;
+        }
         if (!fileStats.isFile()) {
             //console.log(item + " is not a file.");
             continue;
