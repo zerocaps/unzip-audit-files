@@ -1,7 +1,7 @@
 var files = require('../process-files');
 var zip = require('../extract-file');
 
-describe("ProcessFiles test", function() {
+describe("ProcessFiles test:", function() {
     var testDir = "spec/support";
     var nonExistentFile = "no-file.zip";
     var zeroByteFile = "zero-byte-file.zip";
@@ -12,10 +12,6 @@ describe("ProcessFiles test", function() {
     beforeAll(function() {
         spyOn(files, 'process').and.callThrough();
         spyOn(zip, 'extractFile');
-    });
-    it("tests the process function", function() {
-        files.process("", []);
-        expect(files.process).toHaveBeenCalled();
     });
     it("confirms the filepath exists", function() {
         files.process(testDir, [nonExistentFile]);

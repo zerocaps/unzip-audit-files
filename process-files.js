@@ -1,7 +1,7 @@
 var statSync = require('fs').statSync;
 var path = require('path');
 var glob = require('glob');
-var zip = require('./extract-file.js');
+var zip = require('./extract-file');
 
 /**
  * Loop through all zip files in the directory and extract them
