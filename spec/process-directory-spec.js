@@ -1,7 +1,7 @@
 var directory = require('../process-directory');
 var fs = require('fs');
 
-xdescribe("ProcessDirectory test", function() {
+describe("ProcessDirectory test", function() {
     var testDir = "spec/support";
     var testFile = testDir + "/test.zip";
     var emptyDir = testDir + "/empty";
@@ -31,7 +31,7 @@ xdescribe("ProcessDirectory test", function() {
             expect(err.errno).toBe(-3);
         });
     });
-    it("confirm process files is called", function() {
+    xit("confirm process files is called", function() {
         directory.process(["node", __dirname, emptyDir], function(err, msg) {
             expect(err).toBeNull();
             expect(msg).toBe("done.");
