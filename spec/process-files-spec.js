@@ -16,6 +16,7 @@ describe("ProcessFiles test", function() {
     it("tests the process function", function() {
         files.process("", []);
         expect(files.process).toHaveBeenCalled();
+        expect(zip.extractFile).not.toHaveBeenCalled();
     });
     it("confirms the filepath exists", function() {
         files.process(testDir, [nonExistentFile]);

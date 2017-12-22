@@ -4,25 +4,14 @@
  * @author derekWinfield
  * @example node unzip-files.js /Users/default/Documents/audit-logs
  */
-var fs = require('fs');
-var files = require('./process-files.js');
+var directory = require('./process-directory');
 
-console.log();
-if (process.argv.length <= 2) {
-    console.log("Usage: node " + __filename + " path/to/folder");
-    process.exit(-1);
-}
-var path = process.argv[2];
-
-fs.stat(path, function(err, stats) {
-    if (stats === undefined || !stats.isDirectory()) {
-        console.log(path + " is an invalid path.");
-        process.exit(-2);
+directory.process(process.argv, function (err, msg) {
+    if (err) {
+        console.log("Usage: node " + __filename + " path/to/folder");
+        console.error(err);
+        process.exit(err.errno);
     }
-    console.log("unzipping files located in " + path + "...");
-    fs.readdir(path, function(err, items) {
-        files.process(path, items);
-        console.log("done.");
-        console.log();
-    });
+    console.log(msg);
+    console.log();
 });
