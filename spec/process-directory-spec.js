@@ -1,5 +1,6 @@
 var directory = require('../process-directory');
 var fs = require('fs');
+var os = require('os');
 
 describe("ProcessDirectory test:", function() {
     var testDir = "spec/support";
@@ -24,7 +25,11 @@ describe("ProcessDirectory test:", function() {
     });
     it("confirm path is valid", function(done) {
         directory.process(["node", __dirname, "invalid"], function(err) {
-            expect(err.errno).toBe(-2);
+            var enoentCode = -2;
+            if (os.type() === "Windows_NT") {
+                enoentCode = -4058;
+            }
+            expect(err.errno).toBe(enoentCode);
             done();
         });
     });
