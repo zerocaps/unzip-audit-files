@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "glob": "*",
-        "adm-zip": "*"
+        "adm-zip": "0.4.11"
     },
     "repository": {
         "type": "git",
