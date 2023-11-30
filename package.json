@@ -8,7 +8,7 @@
         "node": ">=8.9.0"
     },
     "dependencies": {
-        "glob": "*",
+        "glob": "9.0.0",
         "adm-zip": "0.4.11"
     },
     "repository": {
